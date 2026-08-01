@@ -115,8 +115,8 @@ function groundY(){ return canvas.height*0.84; }
 
 targetY = canvas.height*0.32;
 
-/* Base speed = 10, 100% charge = 1.8x = 18 */
-const BASE_SPEED = 10;
+/* Base speed = 20, 100% charge = 1.8x = 36 */
+const BASE_SPEED = 20;
 const MAX_SPEED = BASE_SPEED * 1.8;
 
 document.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
@@ -139,7 +139,7 @@ function fireArrow(){
   const bp = bowPos();
   let angle = Math.atan2(mouseY-bp.y, mouseX-bp.x);
   angle = Math.max(-Math.PI*0.45, Math.min(Math.PI*0.45, angle));
-  /* Charge maps linearly from BASE_SPEED to MAX_SPEED (1.8x at 100%) */
+  /* Charge maps linearly from BASE_SPEED to MAX_SPEED (1.8x at 100%) - 2x faster */
   const speed = BASE_SPEED + bow.charge * (MAX_SPEED - BASE_SPEED);
 
   arrows.push({
