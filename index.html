@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Bow Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pause overlay -->
+        <div class="pause-overlay" id="pauseOverlay">
+            <div class="pause-content">
+                <h1>PAUSED</h1>
+                <button class="resume-btn" id="resumeBtn">GO</button>
+            </div>
+        </div>
+        
+        <!-- Game canvas -->
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI Controls -->
+        <div class="controls">
+            <!-- Left side controls -->
+            <div class="left-controls">
+                <button class="magic-btn" id="magicBtn">
+                    <span class="magic-text">MAGIC</span>
+                    <span class="magic-indicator" id="magicIndicator">OFF</span>
+                </button>
+                <button class="pause-btn" id="pauseBtn">||</button>
+            </div>
+            
+            <!-- Right side controls -->
+            <div class="right-controls">
+                <div class="speed-control">
+                    <span class="speed-label">SPEED:</span>
+                    <input type="range" min="1" max="10" value="3" class="speed-slider" id="speedSlider">
+                    <span class="speed-value" id="speedValue">3</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Score display -->
+        <div class="score-display" id="scoreDisplay">Score: 0</div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <p>Click and drag to pull the bow, release to shoot!</p>
+            <p>Press ESC or click || to pause</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
