@@ -484,13 +484,6 @@ function hideShop() {
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
-resize();
-
 const G = {
   paused: false,
   magic: false,
@@ -512,7 +505,7 @@ const G = {
 const bow = { charge: 0, drawing: false };
 let mouseX = 0, mouseY = 0;
 let arrows = [], stuck = [], particles = [], popups = [];
-let targetY = 0, targetDir = 1;
+let targetY = null, targetDir = 1;
 let targetMovementType = 'default';
 let targetPhase = 0;
 let gameTimerInterval = null;
@@ -574,7 +567,13 @@ function targetPos() { return { x: canvas.width * 0.82, y: targetY }; }
 function targetRadius() { return Math.min(canvas.width, canvas.height) * 0.058; }
 function groundY() { return canvas.height * 0.84; }
 
-targetY = canvas.height * 0.32;
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  if (targetY === null) targetY = canvas.height * 0.32;
+}
+window.addEventListener('resize', resize);
+resize();
 
 // Base speed reduced by 1.5x (slower arrows)
 const BASE_SPEED = 20 / 1.5; // ~13.33 instead of 20
@@ -736,6 +735,9 @@ function startGame() {
   stuck = [];
   particles = [];
   popups = [];
+  targetY = canvas.height * 0.32;
+  targetDir = 1;
+  targetPhase = 0;
   
   // Set target type based on equipped
   const equippedTarget = playerInventory.equipped.target || 'target_default';
