@@ -515,6 +515,8 @@ let arrows = [], stuck = [], particles = [], popups = [];
 let targetY = 0, targetDir = 1;
 let targetMovementType = 'default';
 let targetPhase = 0;
+let gameTimerInterval = null;
+let magicTimerInterval = null;
 
 // Target types
 const targetTypes = {
@@ -678,9 +680,11 @@ magicBtn.addEventListener('click', () => {
   if (G.magic) {
     G.magicTimeLeft = G.magicDuration;
     magicBtn.classList.add('active');
+    document.getElementById('magicTimerValue').textContent = G.magicTimeLeft;
   } else {
     G.magicTimeLeft = 0;
     magicBtn.classList.remove('active');
+    document.getElementById('magicTimerValue').textContent = '0';
   }
 });
 
@@ -744,6 +748,7 @@ function startGame() {
   } else {
     targetMovementType = 'default';
   }
+  targetPhase = 0;
   
   // Hide menus
   document.getElementById('mainMenu').style.display = 'none';
@@ -754,7 +759,8 @@ function startGame() {
   // Reset UI
   document.getElementById('pauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
   magicBtn.classList.remove('active', 'cooldown');
-  magicBtn.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i><span id="magicBtnText">' + translations[currentLang].magicBtnText + '</span>';
+  document.getElementById('magicBtnText').textContent = translations[currentLang].magicBtnText;
+  document.getElementById('magicTimerValue').textContent = '0';
   
   // Start game timer
   gameTimerInterval = setInterval(() => {
@@ -787,7 +793,7 @@ function startGame() {
         
         if (G.magicCooldownLeft <= 0) {
           magicBtn.classList.remove('cooldown');
-          magicBtn.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i><span id="magicBtnText">' + translations[currentLang].magicBtnText + '</span>';
+          document.getElementById('magicBtnText').textContent = translations[currentLang].magicBtnText;
         }
       }
     }
@@ -796,8 +802,8 @@ function startGame() {
 
 function endGame() {
   G.gameActive = false;
-  clearInterval(gameTimerInterval);
-  clearInterval(magicTimerInterval);
+  if (gameTimerInterval) clearInterval(gameTimerInterval);
+  if (magicTimerInterval) clearInterval(magicTimerInterval);
   
   // Calculate coins earned (1-3 per hit)
   const coinsEarned = G.hits * (Math.floor(Math.random() * 3) + 1);
@@ -822,8 +828,8 @@ function endGame() {
 
 function showMainMenu() {
   G.gameActive = false;
-  clearInterval(gameTimerInterval);
-  clearInterval(magicTimerInterval);
+  if (gameTimerInterval) clearInterval(gameTimerInterval);
+  if (magicTimerInterval) clearInterval(magicTimerInterval);
   
   document.getElementById('gameOverOverlay').style.display = 'none';
   document.getElementById('mainMenu').style.display = 'flex';
