@@ -13,6 +13,52 @@
 
   .ui{position:fixed;z-index:10;pointer-events:auto}
 
+  /* Main Menu Styles */
+  #mainMenu{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#0a0a1a 0%,#1a1a2e 50%,#0a0a1a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+  
+  #mainMenu .title{font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;color:#ffc83c;text-shadow:0 0 30px rgba(255,200,60,0.5),0 0 60px rgba(255,200,60,0.2);letter-spacing:8px;text-transform:uppercase}
+  
+  #mainMenu .subtitle{font-size:14px;color:rgba(255,255,255,0.3);letter-spacing:4px;font-family:'Orbitron',sans-serif}
+  
+  .menu-buttons{display:flex;flex-direction:column;gap:16px;width:280px}
+  
+  .menu-btn{padding:18px 32px;border-radius:16px;border:2px solid rgba(255,255,255,0.15);background:rgba(10,10,26,0.75);backdrop-filter:blur(8px);color:rgba(255,255,255,0.6);font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all .35s;display:flex;align-items:center;justify-content:center;gap:12px}
+  
+  .menu-btn:hover{border-color:rgba(255,200,60,0.4);color:#ffc83c;background:rgba(255,200,60,0.08);box-shadow:0 0 30px rgba(255,200,60,0.15)}
+  
+  .menu-btn i{font-size:18px}
+  
+  /* Shop Menu Styles */
+  #shopMenu{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#0a0a1a 0%,#1a1a2e 50%,#0a0a1a 100%);display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;overflow-y:auto;padding:20px}
+  
+  #shopMenu .header{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:800px;padding:0 20px}
+  
+  #shopMenu .title{font-family:'Orbitron',sans-serif;font-size:36px;font-weight:900;color:#ffc83c;letter-spacing:6px}
+  
+  .shop-stats{display:flex;gap:20px;background:rgba(10,10,26,0.7);padding:12px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+  .shop-stat{font-family:'Orbitron',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)}
+  .shop-stat span{color:#ffc83c;font-weight:700}
+  
+  .shop-tabs{display:flex;gap:8px;background:rgba(10,10,26,0.7);padding:4px;border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+  .shop-tab{padding:10px 20px;border-radius:8px;background:transparent;color:rgba(255,255,255,0.4);font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .3s}
+  .shop-tab.active{background:rgba(255,200,60,0.15);color:#ffc83c;border:1px solid rgba(255,200,60,0.3)}
+  
+  .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;max-width:800px;width:100%;margin-top:20px}
+  
+  .shop-item{background:rgba(10,10,26,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:all .3s}
+  .shop-item:hover{border-color:rgba(255,200,60,0.3);background:rgba(10,10,26,0.8);transform:translateY(-4px)}
+  .shop-item.selected{border-color:#ffc83c;box-shadow:0 0 20px rgba(255,200,60,0.15)}
+  .shop-item.locked{opacity:0.5;pointer-events:none}
+  
+  .shop-item-icon{width:60px;height:60px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,rgba(255,200,60,0.1),rgba(255,200,60,0.05))}
+  
+  .shop-item-name{font-family:'Orbitron',sans-serif;font-size:13px;color:#fff;letter-spacing:1px}
+  .shop-item-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.4}
+  .shop-item-footer{display:flex;justify-content:space-between;align-items:center}
+  .shop-item-price{font-family:'Orbitron',sans-serif;font-size:14px;color:#ffc83c;font-weight:700}
+  .shop-item-status{font-size:11px;color:rgba(255,255,255,0.3)}
+  
+  /* Game UI */
   .score-panel{top:20px;left:24px;display:flex;flex-direction:column;gap:6px}
   .score-panel .label{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;font-family:'Orbitron',sans-serif}
   .score-panel .value{font-size:32px;font-weight:900;color:#f0e6d3;font-family:'Orbitron',sans-serif;line-height:1}
@@ -28,6 +74,18 @@
   #magicBtn:hover{border-color:rgba(255,200,60,.25);color:rgba(255,200,60,.7)}
   #magicBtn.active{border-color:rgba(255,200,60,.5);color:#ffc83c;background:rgba(255,200,60,.08);box-shadow:0 0 30px rgba(255,200,60,.12),inset 0 0 20px rgba(255,200,60,.04)}
   #magicBtn.active i{color:#ffd866;text-shadow:0 0 12px rgba(255,200,60,.6)}
+  #magicBtn.cooldown{color:rgba(255,255,255,0.3);pointer-events:none}
+  #magicBtn.cooldown i{color:rgba(255,255,255,0.2)}
+  #magicBtn.cooldown::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.1) 0%,rgba(255,200,60,0.2) 50%,rgba(255,255,255,0.1) 100%);animation:cooldownPulse 1s ease-in-out infinite}
+  
+  @keyframes cooldownPulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+  .timer-bar{top:20px;left:50%;transform:translateX(-50%);width:200px;height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden}
+  .timer-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#ffc83c,#ff8a3c);transition:width 0.1s}
+  
+  .coin-display{top:20px;right:80px;display:flex;align-items:center;gap:8px;background:rgba(10,10,26,0.7);padding:8px 16px;border-radius:12px;border:1px solid rgba(255,200,60,0.2)}
+  .coin-display i{color:#ffc83c;font-size:16px}
+  .coin-display span{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;color:#ffc83c}
 
   .speed-container{right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
   .speed-label{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.3);text-transform:uppercase}
@@ -41,7 +99,25 @@
   #goBtn{padding:18px 60px;border-radius:16px;border:2px solid rgba(45,212,160,.4);background:rgba(45,212,160,.08);color:#2dd4a0;font-family:'Orbitron',sans-serif;font-size:28px;font-weight:900;letter-spacing:8px;cursor:pointer;transition:all .3s}
   #goBtn:hover{background:rgba(45,212,160,.15);border-color:rgba(45,212,160,.7);box-shadow:0 0 40px rgba(45,212,160,.15);transform:scale(1.04)}
   #pauseOverlay .hint{font-size:12px;color:rgba(255,255,255,.2)}
+  
+  #gameOverOverlay{position:fixed;inset:0;z-index:50;background:rgba(5,5,15,.82);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+  #gameOverOverlay .title{font-family:'Orbitron',sans-serif;font-size:36px;letter-spacing:6px;color:#ffc83c;text-transform:uppercase}
+  #gameOverOverlay .stats{background:rgba(10,10,26,0.7);padding:20px;border-radius:12px;display:flex;flex-direction:column;gap:10px}
+  #gameOverOverlay .stat-row{display:flex;justify-content:space-between;gap:20px}
+  #gameOverOverlay .stat-label{font-family:'Orbitron',sans-serif;font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:2px}
+  #gameOverOverlay .stat-value{font-family:'Orbitron',sans-serif;font-size:18px;color:#ffc83c;font-weight:700}
+  #restartBtn{padding:18px 60px;border-radius:16px;border:2px solid rgba(255,200,60,.4);background:rgba(255,200,60,.08);color:#ffc83c;font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;letter-spacing:6px;cursor:pointer;transition:all .3s}
+  #restartBtn:hover{background:rgba(255,200,60,.15);border-color:rgba(255,200,60,.7);box-shadow:0 0 40px rgba(255,200,60,0.15);transform:scale(1.04)}
 
+  /* Language Toggle */
+  #langToggle{top:20px;right:24px;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.15);background:rgba(10,10,26,.7);backdrop-filter:blur(8px);color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s}
+  #langToggle:hover{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.08)}
+  
+  /* Magic Timer Display */
+  #magicTimer{left:24px;bottom:150px;display:flex;align-items:center;gap:10px;background:rgba(10,10,26,0.7);padding:8px 16px;border-radius:12px;border:1px solid rgba(255,200,60,0.2)}
+  #magicTimer i{color:#ffc83c;font-size:14px}
+  #magicTimer span{font-family:'Orbitron',sans-serif;font-size:14px;color:#ffc83c}
+  
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:0s!important}}
 </style>
 </head>
@@ -49,8 +125,60 @@
 
 <canvas id="game"></canvas>
 
+<!-- Main Menu -->
+<div id="mainMenu">
+  <div class="title" id="menuTitle">MAGIC BOW</div>
+  <div class="subtitle" id="menuSubtitle">ARCHERY CHALLENGE</div>
+  <div class="menu-buttons">
+    <button class="menu-btn" id="startBtn">
+      <i class="fas fa-play"></i>
+      <span id="startBtnText">START GAME</span>
+    </button>
+    <button class="menu-btn" id="shopBtn">
+      <i class="fas fa-store"></i>
+      <span id="shopBtnText">SHOP</span>
+    </button>
+    <button class="menu-btn" id="exitBtn">
+      <i class="fas fa-times"></i>
+      <span id="exitBtnText">EXIT</span>
+    </button>
+  </div>
+  <button id="langToggle" class="ui" aria-label="Toggle language">
+    <span id="langText">EN</span>
+  </button>
+</div>
+
+<!-- Shop Menu -->
+<div id="shopMenu">
+  <div class="header">
+    <button class="menu-btn" id="backFromShopBtn">
+      <i class="fas fa-arrow-left"></i>
+      <span id="backFromShopBtnText">BACK</span>
+    </button>
+    <div class="title" id="shopTitle">SHOP</div>
+    <div></div>
+  </div>
+  <div class="shop-stats">
+    <div class="shop-stat" id="shopCoinsText">Coins: <span id="shopCoinsValue">0</span></div>
+    <div class="shop-stat" id="shopHighScoreText">High Score: <span id="shopHighScoreValue">0</span></div>
+  </div>
+  <div class="shop-tabs">
+    <button class="shop-tab active" id="bowTabBtn" data-tab="bow">
+      <span id="bowTabText">BOW SKINS</span>
+    </button>
+    <button class="shop-tab" id="arrowTabBtn" data-tab="arrow">
+      <span id="arrowTabText">ARROW SKINS</span>
+    </button>
+    <button class="shop-tab" id="targetTabBtn" data-tab="target">
+      <span id="targetTabText">TARGETS</span>
+    </button>
+  </div>
+  <div class="shop-grid" id="shopGrid"></div>
+</div>
+
+<!-- Game UI -->
 <div class="ui score-panel">
-  <div class="label">Score</div>
+  <div class="label" id="scoreLabel">Score</div>
   <div class="value" id="scoreVal">0</div>
   <div class="stats">
     <div class="stat">Shots <span id="shotsVal">0</span></div>
@@ -59,15 +187,29 @@
   </div>
 </div>
 
+<div class="ui timer-bar">
+  <div class="timer-fill" id="timerFill"></div>
+</div>
+
+<div class="ui coin-display">
+  <i class="fas fa-coins"></i>
+  <span id="coinValue">0</span>
+</div>
+
 <button id="pauseBtn" class="ui" aria-label="Pause game"><i class="fas fa-pause"></i></button>
 
 <button id="magicBtn" class="ui" aria-label="Toggle magic mode">
   <i class="fas fa-wand-magic-sparkles"></i>
-  MAGIC
+  <span id="magicBtnText">MAGIC</span>
 </button>
 
+<div class="ui" id="magicTimer">
+  <i class="fas fa-hourglass-half"></i>
+  <span id="magicTimerValue">0</span>
+</div>
+
 <div class="ui speed-container">
-  <div class="speed-label">Speed</div>
+  <div class="speed-label" id="speedLabel">Speed</div>
   <div class="speed-track" id="speedTrack">
     <div class="speed-fill" id="speedFill"></div>
     <div class="speed-thumb" id="speedThumb"></div>
@@ -76,166 +218,712 @@
 </div>
 
 <div id="pauseOverlay">
-  <div class="title">Paused</div>
-  <button id="goBtn">GO</button>
-  <div class="hint">Press ESC or click GO to resume</div>
+  <div class="title" id="pauseTitle">Paused</div>
+  <button id="goBtn">
+    <span id="goBtnText">GO</span>
+  </button>
+  <button class="menu-btn" id="quitToMenuBtn">
+    <i class="fas fa-home"></i>
+    <span id="quitToMenuBtnText">MENU</span>
+  </button>
+  <div class="hint" id="pauseHint">Press ESC or click GO to resume</div>
+</div>
+
+<div id="gameOverOverlay">
+  <div class="title" id="gameOverTitle">GAME OVER</div>
+  <div class="stats">
+    <div class="stat-row">
+      <div class="stat-label" id="finalScoreLabel">Score:</div>
+      <div class="stat-value" id="finalScoreValue">0</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label" id="finalHitsLabel">Hits:</div>
+      <div class="stat-value" id="finalHitsValue">0</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label" id="finalAccuracyLabel">Accuracy:</div>
+      <div class="stat-value" id="finalAccuracyValue">0%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label" id="finalCoinsLabel">Coins Earned:</div>
+      <div class="stat-value" id="finalCoinsValue">0</div>
+    </div>
+  </div>
+  <button id="restartBtn">
+    <span id="restartBtnText">PLAY AGAIN</span>
+  </button>
+  <button class="menu-btn" id="menuFromGameOverBtn">
+    <i class="fas fa-home"></i>
+    <span id="menuFromGameOverBtnText">MENU</span>
+  </button>
 </div>
 
 <script>
+// ==================== LANGUAGE SYSTEM ====================
+const translations = {
+  en: {
+    menuTitle: 'MAGIC BOW',
+    menuSubtitle: 'ARCHERY CHALLENGE',
+    startBtnText: 'START GAME',
+    shopBtnText: 'SHOP',
+    exitBtnText: 'EXIT',
+    shopTitle: 'SHOP',
+    backFromShopBtnText: 'BACK',
+    bowTabText: 'BOW SKINS',
+    arrowTabText: 'ARROW SKINS',
+    targetTabText: 'TARGETS',
+    shopCoinsText: 'Coins: ',
+    shopHighScoreText: 'High Score: ',
+    scoreLabel: 'Score',
+    shotsLabel: 'Shots',
+    hitsLabel: 'Hits',
+    accLabel: 'Acc',
+    pauseTitle: 'Paused',
+    goBtnText: 'GO',
+    quitToMenuBtnText: 'MENU',
+    pauseHint: 'Press ESC or click GO to resume',
+    gameOverTitle: 'GAME OVER',
+    finalScoreLabel: 'Score:',
+    finalHitsLabel: 'Hits:',
+    finalAccuracyLabel: 'Accuracy:',
+    finalCoinsLabel: 'Coins Earned:',
+    restartBtnText: 'PLAY AGAIN',
+    menuFromGameOverBtnText: 'MENU',
+    magicBtnText: 'MAGIC',
+    speedLabel: 'Speed',
+    langText: 'EN'
+  },
+  ee: {
+    menuTitle: 'MAAGILINE VIBU',
+    menuSubtitle: 'VIBULASKMINE',
+    startBtnText: 'ALUSTA MÄNGU',
+    shopBtnText: 'POOD',
+    exitBtnText: 'VÄLJU',
+    shopTitle: 'POOD',
+    backFromShopBtnText: 'TAGASI',
+    bowTabText: 'VIBU SKINID',
+    arrowTabText: 'NOOLTE SKINID',
+    targetTabText: 'SIHTMÄRGID',
+    shopCoinsText: 'Coinid: ',
+    shopHighScoreText: 'Parim tulemus: ',
+    scoreLabel: 'Punkid',
+    shotsLabel: 'Laskud',
+    hitsLabel: 'Tabamused',
+    accLabel: 'Täpsus',
+    pauseTitle: 'Paus',
+    goBtnText: 'JÄTKA',
+    quitToMenuBtnText: 'MENÜÜ',
+    pauseHint: 'Vajuta ESC või klõpsa JÄTKA',
+    gameOverTitle: 'MÄNG LÕPPES',
+    finalScoreLabel: 'Punkid:',
+    finalHitsLabel: 'Tabamused:',
+    finalAccuracyLabel: 'Täpsus:',
+    finalCoinsLabel: 'Coinid teenitud:',
+    restartBtnText: 'MÄNGA UUESTI',
+    menuFromGameOverBtnText: 'MENÜÜ',
+    magicBtnText: 'MAAGIA',
+    speedLabel: 'Kiirus',
+    langText: 'EE'
+  }
+};
+
+let currentLang = 'en';
+
+function updateLanguage() {
+  const lang = translations[currentLang];
+  document.getElementById('menuTitle').textContent = lang.menuTitle;
+  document.getElementById('menuSubtitle').textContent = lang.menuSubtitle;
+  document.getElementById('startBtnText').textContent = lang.startBtnText;
+  document.getElementById('shopBtnText').textContent = lang.shopBtnText;
+  document.getElementById('exitBtnText').textContent = lang.exitBtnText;
+  document.getElementById('shopTitle').textContent = lang.shopTitle;
+  document.getElementById('backFromShopBtnText').textContent = lang.backFromShopBtnText;
+  document.getElementById('bowTabText').textContent = lang.bowTabText;
+  document.getElementById('arrowTabText').textContent = lang.arrowTabText;
+  document.getElementById('targetTabText').textContent = lang.targetTabText;
+  document.getElementById('shopCoinsText').textContent = lang.shopCoinsText;
+  document.getElementById('shopHighScoreText').textContent = lang.shopHighScoreText;
+  document.getElementById('scoreLabel').textContent = lang.scoreLabel;
+  document.getElementById('accVal').textContent = '0%';
+  document.getElementById('pauseTitle').textContent = lang.pauseTitle;
+  document.getElementById('goBtnText').textContent = lang.goBtnText;
+  document.getElementById('quitToMenuBtnText').textContent = lang.quitToMenuBtnText;
+  document.getElementById('pauseHint').textContent = lang.pauseHint;
+  document.getElementById('gameOverTitle').textContent = lang.gameOverTitle;
+  document.getElementById('finalScoreLabel').textContent = lang.finalScoreLabel;
+  document.getElementById('finalHitsLabel').textContent = lang.finalHitsLabel;
+  document.getElementById('finalAccuracyLabel').textContent = lang.finalAccuracyLabel;
+  document.getElementById('finalCoinsLabel').textContent = lang.finalCoinsLabel;
+  document.getElementById('restartBtnText').textContent = lang.restartBtnText;
+  document.getElementById('menuFromGameOverBtnText').textContent = lang.menuFromGameOverBtnText;
+  document.getElementById('magicBtnText').textContent = lang.magicBtnText;
+  document.getElementById('speedLabel').textContent = lang.speedLabel;
+  document.getElementById('langText').textContent = lang.langText;
+  
+  // Update shop items
+  renderShop();
+}
+
+// ==================== SHOP SYSTEM ====================
+const shopItems = {
+  bow: [
+    { id: 'bow_default', name: {en: 'Default Bow', ee: 'Vaikimisi vibu'}, desc: {en: 'Standard wooden bow', ee: 'Tavaline puidust vibu'}, price: 0, icon: '🏹', type: 'bow', owned: true },
+    { id: 'bow_fire', name: {en: 'Fire Bow', ee: 'Tulevibu'}, desc: {en: 'Flaming bow with fire arrows', ee: 'Tulega vibu tulenooltega'}, price: 300, icon: '🔥', type: 'bow', owned: false },
+    { id: 'bow_ice', name: {en: 'Ice Bow', ee: 'Jäävibu'}, desc: {en: 'Frosted bow with ice arrows', ee: 'Jääga kaetud vibu jäänooltega'}, price: 300, icon: '❄️', type: 'bow', owned: false },
+    { id: 'bow_gold', name: {en: 'Golden Bow', ee: 'Kuldne vibu'}, desc: {en: 'Luxurious golden bow', ee: 'Luksuslik kuldne vibu'}, price: 500, icon: '💰', type: 'bow', owned: false },
+    { id: 'bow_shadow', name: {en: 'Shadow Bow', ee: 'Varju vibu'}, desc: {en: 'Dark bow with shadow arrows', ee: 'Tume vibu varjunooltega'}, price: 400, icon: '🌑', type: 'bow', owned: false }
+  ],
+  arrow: [
+    { id: 'arrow_default', name: {en: 'Default Arrows', ee: 'Vaikimisi nooled'}, desc: {en: 'Standard arrows', ee: 'Tavalised nooled'}, price: 0, icon: '➡️', type: 'arrow', owned: true },
+    { id: 'arrow_fire', name: {en: 'Fire Arrows', ee: 'Tule nooled'}, desc: {en: 'Arrows that burn targets', ee: 'Nooled, mis põletavad sihtmärke'}, price: 200, icon: '🔥', type: 'arrow', owned: false },
+    { id: 'arrow_ice', name: {en: 'Ice Arrows', ee: 'Jää nooled'}, desc: {en: 'Arrows that freeze targets', ee: 'Nooled, mis jäätavad sihtmärgid'}, price: 200, icon: '❄️', type: 'arrow', owned: false },
+    { id: 'arrow_lightning', name: {en: 'Lightning Arrows', ee: 'Välgu nooled'}, desc: {en: 'Electrified arrows', ee: 'Elektrifitseeritud nooled'}, price: 250, icon: '⚡', type: 'arrow', owned: false },
+    { id: 'arrow_poison', name: {en: 'Poison Arrows', ee: 'Mürgi nooled'}, desc: {en: 'Toxic arrows', ee: 'Mürgised nooled'}, price: 200, icon: '☠️', type: 'arrow', owned: false }
+  ],
+  target: [
+    { id: 'target_default', name: {en: 'Default Target', ee: 'Vaikimisi sihtmärk'}, desc: {en: 'Standard target', ee: 'Tavaline sihtmärk'}, price: 0, icon: '🎯', type: 'target', owned: true },
+    { id: 'target_moving', name: {en: 'Moving Target', ee: 'Liikuv sihtmärk'}, desc: {en: 'Target that moves up and down', ee: 'Sihtmärk, mis liigub üles ja alla'}, price: 150, icon: '🔄', type: 'target', owned: false },
+    { id: 'target_fast', name: {en: 'Fast Target', ee: 'Kiire sihtmärk'}, desc: {en: 'Target that moves quickly', ee: 'Sihtmärk, mis liigub kiirelt'}, price: 200, icon: '🚀', type: 'target', owned: false },
+    { id: 'target_zigzag', name: {en: 'Zigzag Target', ee: 'Tsik-tsak sihtmärk'}, desc: {en: 'Target with zigzag movement', ee: 'Sihtmärk tsik-tsak liikumisega'}, price: 250, icon: '⬅️➡️', type: 'target', owned: false }
+  ]
+};
+
+let playerInventory = {
+  coins: 0,
+  highScore: 0,
+  ownedItems: {
+    bow: ['bow_default'],
+    arrow: ['arrow_default'],
+    target: ['target_default']
+  },
+  equipped: {
+    bow: 'bow_default',
+    arrow: 'arrow_default',
+    target: 'target_default'
+  }
+};
+
+let currentShopTab = 'bow';
+
+function renderShop() {
+  const lang = translations[currentLang];
+  const grid = document.getElementById('shopGrid');
+  grid.innerHTML = '';
+  
+  const items = shopItems[currentShopTab];
+  
+  items.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'shop-item';
+    
+    const isOwned = playerInventory.ownedItems[currentShopTab].includes(item.id);
+    const isEquipped = playerInventory.equipped[currentShopTab] === item.id;
+    
+    if (isOwned) {
+      itemElement.classList.add('owned');
+    }
+    if (isEquipped) {
+      itemElement.classList.add('selected');
+    }
+    
+    const canAfford = playerInventory.coins >= item.price;
+    
+    itemElement.innerHTML = `
+      <div class="shop-item-icon">${item.icon}</div>
+      <div class="shop-item-name">${item.name[currentLang]}</div>
+      <div class="shop-item-desc">${item.desc[currentLang]}</div>
+      <div class="shop-item-footer">
+        <div class="shop-item-price">${item.price === 0 ? lang.shopCoinsText.trim() : item.price}</div>
+        <div class="shop-item-status">${isOwned ? (isEquipped ? 'EQUIPPED' : 'OWNED') : (canAfford ? '' : 'NEED MORE COINS')}</div>
+      </div>
+    `;
+    
+    if (isOwned) {
+      itemElement.addEventListener('click', () => {
+        if (!isEquipped) {
+          playerInventory.equipped[currentShopTab] = item.id;
+          renderShop();
+        }
+      });
+    } else if (canAfford) {
+      itemElement.addEventListener('click', () => {
+        playerInventory.coins -= item.price;
+        playerInventory.ownedItems[currentShopTab].push(item.id);
+        playerInventory.equipped[currentShopTab] = item.id;
+        renderShop();
+        updateShopStats();
+        saveGame();
+      });
+    }
+    
+    grid.appendChild(itemElement);
+  });
+  
+  document.getElementById('shopCoinsValue').textContent = playerInventory.coins;
+  document.getElementById('shopHighScoreValue').textContent = playerInventory.highScore;
+}
+
+function updateShopStats() {
+  document.getElementById('shopCoinsValue').textContent = playerInventory.coins;
+  document.getElementById('shopHighScoreValue').textContent = playerInventory.highScore;
+}
+
+function showShop() {
+  document.getElementById('mainMenu').style.display = 'none';
+  document.getElementById('shopMenu').style.display = 'flex';
+  renderShop();
+  updateShopStats();
+}
+
+function hideShop() {
+  document.getElementById('shopMenu').style.display = 'none';
+  document.getElementById('mainMenu').style.display = 'flex';
+}
+
+// ==================== GAME STATE ====================
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 
-function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 window.addEventListener('resize', resize);
 resize();
 
 const G = {
-  paused:false, magic:false, targetSpeed:3,
-  score:0, shots:0, hits:0, misses:0, showHint:true
+  paused: false,
+  magic: false,
+  targetSpeed: 3,
+  score: 0,
+  shots: 0,
+  hits: 0,
+  misses: 0,
+  showHint: true,
+  gameActive: false,
+  gameTime: 180, // 3 minutes in seconds
+  magicDuration: 20, // 20 seconds
+  magicCooldown: 30, // 30 seconds
+  magicTimeLeft: 0,
+  magicCooldownLeft: 0,
+  currentTargetType: 'default'
 };
 
-const bow = { charge:0, drawing:false };
-let mouseX=0, mouseY=0;
-let arrows=[], stuck=[], particles=[], popups=[];
-let targetY=0, targetDir=1;
+const bow = { charge: 0, drawing: false };
+let mouseX = 0, mouseY = 0;
+let arrows = [], stuck = [], particles = [], popups = [];
+let targetY = 0, targetDir = 1;
+let targetMovementType = 'default';
+let targetPhase = 0;
 
-const stars = Array.from({length:120},()=>({
-  x:Math.random(), y:Math.random()*0.7,
-  s:Math.random()*1.8+0.4, phase:Math.random()*Math.PI*2
+// Target types
+const targetTypes = {
+  default: {
+    speed: 1,
+    movement: (y, minY, maxY, dir, speed) => {
+      const newY = y + dir * speed * 0.45;
+      if (newY <= minY) { dir = 1; return { y: minY, dir }; }
+      if (newY >= maxY) { dir = -1; return { y: maxY, dir }; }
+      return { y: newY, dir };
+    }
+  },
+  moving: {
+    speed: 1.5,
+    movement: (y, minY, maxY, dir, speed) => {
+      const newY = y + dir * speed * 0.6;
+      if (newY <= minY) { dir = 1; return { y: minY, dir }; }
+      if (newY >= maxY) { dir = -1; return { y: maxY, dir }; }
+      return { y: newY, dir };
+    }
+  },
+  fast: {
+    speed: 2.5,
+    movement: (y, minY, maxY, dir, speed) => {
+      const newY = y + dir * speed * 0.8;
+      if (newY <= minY) { dir = 1; return { y: minY, dir }; }
+      if (newY >= maxY) { dir = -1; return { y: maxY, dir }; }
+      return { y: newY, dir };
+    }
+  },
+  zigzag: {
+    speed: 1.2,
+    movement: (y, minY, maxY, dir, speed, phase) => {
+      // Zigzag movement
+      const zigzagOffset = Math.sin(phase * 0.1) * 40;
+      const newY = y + dir * speed * 0.5 + zigzagOffset;
+      if (newY <= minY) { dir = 1; return { y: minY, dir }; }
+      if (newY >= maxY) { dir = -1; return { y: maxY, dir }; }
+      return { y: newY, dir, phase: phase + 0.05 };
+    }
+  }
+};
+
+const stars = Array.from({ length: 120 }, () => ({
+  x: Math.random(), y: Math.random() * 0.7,
+  s: Math.random() * 1.8 + 0.4, phase: Math.random() * Math.PI * 2
 }));
-const grass = Array.from({length:80},()=>({
-  x:Math.random(), h:Math.random()*18+6,
-  lean:(Math.random()-0.5)*0.4, phase:Math.random()*Math.PI*2
+const grass = Array.from({ length: 80 }, () => ({
+  x: Math.random(), h: Math.random() * 18 + 6,
+  lean: (Math.random() - 0.5) * 0.4, phase: Math.random() * Math.PI * 2
 }));
 
-function bowPos(){ return {x:canvas.width*0.1, y:canvas.height*0.52}; }
-function targetPos(){ return {x:canvas.width*0.82, y:targetY}; }
-function targetRadius(){ return Math.min(canvas.width,canvas.height)*0.058; }
-function groundY(){ return canvas.height*0.84; }
+function bowPos() { return { x: canvas.width * 0.1, y: canvas.height * 0.52 }; }
+function targetPos() { return { x: canvas.width * 0.82, y: targetY }; }
+function targetRadius() { return Math.min(canvas.width, canvas.height) * 0.058; }
+function groundY() { return canvas.height * 0.84; }
 
-targetY = canvas.height*0.32;
+targetY = canvas.height * 0.32;
 
-/* Base speed = 20, 100% charge = 1.8x = 36 */
-const BASE_SPEED = 20;
+// Base speed reduced by 1.5x (slower arrows)
+const BASE_SPEED = 20 / 1.5; // ~13.33 instead of 20
 const MAX_SPEED = BASE_SPEED * 1.8;
 
-document.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
-
-document.addEventListener('mousedown', e=>{
-  if(e.target!==canvas || G.paused) return;
-  bow.drawing=true; bow.charge=0;
-});
-
-document.addEventListener('mouseup', e=>{
-  if(!bow.drawing || G.paused) return;
-  bow.drawing=false;
-  if(bow.charge>0.08) fireArrow();
-  bow.charge=0;
-});
-
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') togglePause(); });
-
-function fireArrow(){
-  const bp = bowPos();
-  let angle = Math.atan2(mouseY-bp.y, mouseX-bp.x);
-  angle = Math.max(-Math.PI*0.45, Math.min(Math.PI*0.45, angle));
-  /* Charge maps linearly from BASE_SPEED to MAX_SPEED (1.8x at 100%) - 2x faster */
-  const speed = BASE_SPEED + bow.charge * (MAX_SPEED - BASE_SPEED);
-
-  arrows.push({
-    x:bp.x, y:bp.y,
-    vx:Math.cos(angle)*speed, vy:Math.sin(angle)*speed,
-    trail:[], hue:Math.random()*360,
-    alive:true, magic:G.magic, age:0
-  });
-  G.shots++;
-  if(G.showHint) G.showHint=false;
+// ==================== SAVE/LOAD SYSTEM ====================
+function saveGame() {
+  const saveData = {
+    inventory: playerInventory,
+    highScore: playerInventory.highScore
+  };
+  localStorage.setItem('magicBowSave', JSON.stringify(saveData));
 }
 
-function togglePause(){
-  G.paused=!G.paused;
-  document.getElementById('pauseOverlay').style.display = G.paused?'flex':'none';
-  document.getElementById('pauseBtn').innerHTML = G.paused
-    ?'<i class="fas fa-play"></i>':'<i class="fas fa-pause"></i>';
+function loadGame() {
+  const saveData = localStorage.getItem('magicBowSave');
+  if (saveData) {
+    try {
+      const data = JSON.parse(saveData);
+      playerInventory = data.inventory || playerInventory;
+      playerInventory.highScore = data.highScore || 0;
+    } catch (e) {
+      console.log('No save data found');
+    }
+  }
 }
+
+// ==================== EVENT LISTENERS ====================
+document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+document.addEventListener('mousedown', e => {
+  if (e.target !== canvas || G.paused || !G.gameActive) return;
+  bow.drawing = true; bow.charge = 0;
+});
+
+document.addEventListener('mouseup', e => {
+  if (!bow.drawing || G.paused || !G.gameActive) return;
+  bow.drawing = false;
+  if (bow.charge > 0.08) fireArrow();
+  bow.charge = 0;
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (G.gameActive) {
+      togglePause();
+    } else if (document.getElementById('mainMenu').style.display === 'flex') {
+      // Exit game
+      if (confirm(translations[currentLang].exitBtnText + '?')) {
+        window.close();
+      }
+    }
+  }
+});
+
+// Button event listeners
+document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('shopBtn').addEventListener('click', showShop);
+document.getElementById('exitBtn').addEventListener('click', () => {
+  if (confirm(translations[currentLang].exitBtnText + '?')) {
+    window.close();
+  }
+});
+
+document.getElementById('backFromShopBtn').addEventListener('click', hideShop);
+
+document.getElementById('bowTabBtn').addEventListener('click', () => {
+  currentShopTab = 'bow';
+  document.querySelectorAll('.shop-tab').forEach(tab => tab.classList.remove('active'));
+  document.getElementById('bowTabBtn').classList.add('active');
+  renderShop();
+});
+
+document.getElementById('arrowTabBtn').addEventListener('click', () => {
+  currentShopTab = 'arrow';
+  document.querySelectorAll('.shop-tab').forEach(tab => tab.classList.remove('active'));
+  document.getElementById('arrowTabBtn').classList.add('active');
+  renderShop();
+});
+
+document.getElementById('targetTabBtn').addEventListener('click', () => {
+  currentShopTab = 'target';
+  document.querySelectorAll('.shop-tab').forEach(tab => tab.classList.remove('active'));
+  document.getElementById('targetTabBtn').classList.add('active');
+  renderShop();
+});
 
 document.getElementById('pauseBtn').addEventListener('click', togglePause);
 document.getElementById('goBtn').addEventListener('click', togglePause);
+document.getElementById('quitToMenuBtn').addEventListener('click', endGame);
+document.getElementById('restartBtn').addEventListener('click', startGame);
+document.getElementById('menuFromGameOverBtn').addEventListener('click', showMainMenu);
+
+document.getElementById('langToggle').addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'ee' : 'en';
+  updateLanguage();
+});
 
 const magicBtn = document.getElementById('magicBtn');
-magicBtn.addEventListener('click',()=>{
-  G.magic=!G.magic;
-  magicBtn.classList.toggle('active', G.magic);
+magicBtn.addEventListener('click', () => {
+  if (G.magicCooldownLeft > 0 || !G.gameActive) return;
+  G.magic = !G.magic;
+  if (G.magic) {
+    G.magicTimeLeft = G.magicDuration;
+    magicBtn.classList.add('active');
+  } else {
+    G.magicTimeLeft = 0;
+    magicBtn.classList.remove('active');
+  }
 });
 
 /* Speed slider */
-const speedTrack=document.getElementById('speedTrack');
-const speedFill=document.getElementById('speedFill');
-const speedThumb=document.getElementById('speedThumb');
-const speedValue=document.getElementById('speedValue');
-let draggingSpeed=false;
+const speedTrack = document.getElementById('speedTrack');
+const speedFill = document.getElementById('speedFill');
+const speedThumb = document.getElementById('speedThumb');
+const speedValue = document.getElementById('speedValue');
+let draggingSpeed = false;
 
-function updateSpeedUI(){
-  const pct=(G.targetSpeed-1)/9*100;
-  speedFill.style.height=pct+'%';
-  speedThumb.style.bottom=pct+'%';
-  speedValue.textContent=G.targetSpeed;
+function updateSpeedUI() {
+  const pct = (G.targetSpeed - 1) / 9 * 100;
+  speedFill.style.height = pct + '%';
+  speedThumb.style.bottom = pct + '%';
+  speedValue.textContent = G.targetSpeed;
 }
 updateSpeedUI();
 
-function setSpeedFromY(cy){
-  const r=speedTrack.getBoundingClientRect();
-  const rel=1-Math.max(0,Math.min(1,(cy-r.top)/r.height));
-  G.targetSpeed=Math.round(rel*9+1);
+function setSpeedFromY(cy) {
+  const r = speedTrack.getBoundingClientRect();
+  const rel = 1 - Math.max(0, Math.min(1, (cy - r.top) / r.height));
+  G.targetSpeed = Math.round(rel * 9 + 1);
   updateSpeedUI();
 }
 
-speedTrack.addEventListener('mousedown',e=>{draggingSpeed=true;setSpeedFromY(e.clientY);e.preventDefault();});
-document.addEventListener('mousemove',e=>{if(draggingSpeed)setSpeedFromY(e.clientY);});
-document.addEventListener('mouseup',()=>{draggingSpeed=false;});
-speedTrack.addEventListener('touchstart',e=>{draggingSpeed=true;setSpeedFromY(e.touches[0].clientY);e.preventDefault();},{passive:false});
-document.addEventListener('touchmove',e=>{if(draggingSpeed)setSpeedFromY(e.touches[0].clientY);});
-document.addEventListener('touchend',()=>{draggingSpeed=false;});
+speedTrack.addEventListener('mousedown', e => { draggingSpeed = true; setSpeedFromY(e.clientY); e.preventDefault(); });
+document.addEventListener('mousemove', e => { if (draggingSpeed) setSpeedFromY(e.clientY); });
+document.addEventListener('mouseup', () => { draggingSpeed = false; });
+speedTrack.addEventListener('touchstart', e => { draggingSpeed = true; setSpeedFromY(e.touches[0].clientY); e.preventDefault(); }, { passive: false });
+document.addEventListener('touchmove', e => { if (draggingSpeed) setSpeedFromY(e.touches[0].clientY); });
+document.addEventListener('touchend', () => { draggingSpeed = false; });
+
+// ==================== GAME FUNCTIONS ====================
+function startGame() {
+  // Reset game state
+  G.score = 0;
+  G.shots = 0;
+  G.hits = 0;
+  G.misses = 0;
+  G.gameTime = 180;
+  G.magic = false;
+  G.magicTimeLeft = 0;
+  G.magicCooldownLeft = 0;
+  G.paused = false;
+  G.gameActive = true;
+  G.showHint = true;
+  
+  arrows = [];
+  stuck = [];
+  particles = [];
+  popups = [];
+  
+  // Set target type based on equipped
+  const equippedTarget = playerInventory.equipped.target || 'target_default';
+  if (equippedTarget === 'target_moving') {
+    targetMovementType = 'moving';
+  } else if (equippedTarget === 'target_fast') {
+    targetMovementType = 'fast';
+  } else if (equippedTarget === 'target_zigzag') {
+    targetMovementType = 'zigzag';
+  } else {
+    targetMovementType = 'default';
+  }
+  
+  // Hide menus
+  document.getElementById('mainMenu').style.display = 'none';
+  document.getElementById('shopMenu').style.display = 'none';
+  document.getElementById('pauseOverlay').style.display = 'none';
+  document.getElementById('gameOverOverlay').style.display = 'none';
+  
+  // Reset UI
+  document.getElementById('pauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
+  magicBtn.classList.remove('active', 'cooldown');
+  magicBtn.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i><span id="magicBtnText">' + translations[currentLang].magicBtnText + '</span>';
+  
+  // Start game timer
+  gameTimerInterval = setInterval(() => {
+    if (!G.paused && G.gameActive) {
+      G.gameTime--;
+      updateTimerUI();
+      
+      if (G.gameTime <= 0) {
+        endGame();
+      }
+    }
+  }, 1000);
+  
+  // Start magic timer
+  magicTimerInterval = setInterval(() => {
+    if (!G.paused && G.gameActive) {
+      if (G.magicTimeLeft > 0) {
+        G.magicTimeLeft--;
+        document.getElementById('magicTimerValue').textContent = G.magicTimeLeft;
+        
+        if (G.magicTimeLeft <= 0) {
+          G.magic = false;
+          G.magicCooldownLeft = G.magicCooldown;
+          magicBtn.classList.remove('active');
+          magicBtn.classList.add('cooldown');
+        }
+      } else if (G.magicCooldownLeft > 0) {
+        G.magicCooldownLeft--;
+        document.getElementById('magicTimerValue').textContent = G.magicCooldownLeft;
+        
+        if (G.magicCooldownLeft <= 0) {
+          magicBtn.classList.remove('cooldown');
+          magicBtn.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i><span id="magicBtnText">' + translations[currentLang].magicBtnText + '</span>';
+        }
+      }
+    }
+  }, 1000);
+}
+
+function endGame() {
+  G.gameActive = false;
+  clearInterval(gameTimerInterval);
+  clearInterval(magicTimerInterval);
+  
+  // Calculate coins earned (1-3 per hit)
+  const coinsEarned = G.hits * (Math.floor(Math.random() * 3) + 1);
+  playerInventory.coins += coinsEarned;
+  
+  // Update high score
+  if (G.score > playerInventory.highScore) {
+    playerInventory.highScore = G.score;
+  }
+  
+  saveGame();
+  
+  // Show game over screen
+  document.getElementById('gameOverOverlay').style.display = 'flex';
+  document.getElementById('finalScoreValue').textContent = G.score;
+  document.getElementById('finalHitsValue').textContent = G.hits;
+  document.getElementById('finalAccuracyValue').textContent = G.shots > 0 ? Math.round(G.hits / G.shots * 100) + '%' : '0%';
+  document.getElementById('finalCoinsValue').textContent = coinsEarned;
+  
+  updateShopStats();
+}
+
+function showMainMenu() {
+  G.gameActive = false;
+  clearInterval(gameTimerInterval);
+  clearInterval(magicTimerInterval);
+  
+  document.getElementById('gameOverOverlay').style.display = 'none';
+  document.getElementById('mainMenu').style.display = 'flex';
+  
+  // Reset UI
+  document.getElementById('scoreVal').textContent = '0';
+  document.getElementById('shotsVal').textContent = '0';
+  document.getElementById('hitsVal').textContent = '0';
+  document.getElementById('accVal').textContent = '0%';
+  document.getElementById('coinValue').textContent = playerInventory.coins;
+  document.getElementById('timerFill').style.width = '100%';
+  document.getElementById('magicTimerValue').textContent = '0';
+}
+
+function togglePause() {
+  G.paused = !G.paused;
+  document.getElementById('pauseOverlay').style.display = G.paused ? 'flex' : 'none';
+  document.getElementById('pauseBtn').innerHTML = G.paused
+    ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+}
+
+function updateTimerUI() {
+  const percentage = (G.gameTime / 180) * 100;
+  document.getElementById('timerFill').style.width = percentage + '%';
+  
+  // Change color based on time left
+  if (G.gameTime <= 30) {
+    document.getElementById('timerFill').style.background = 'linear-gradient(90deg,#ff3c3c,#ff8a3c)';
+  } else if (G.gameTime <= 60) {
+    document.getElementById('timerFill').style.background = 'linear-gradient(90deg,#ff8a3c,#ffc83c)';
+  } else {
+    document.getElementById('timerFill').style.background = 'linear-gradient(90deg,#ffc83c,#ff8a3c)';
+  }
+}
+
+function fireArrow() {
+  const bp = bowPos();
+  let angle = Math.atan2(mouseY - bp.y, mouseX - bp.x);
+  angle = Math.max(-Math.PI * 0.45, Math.min(Math.PI * 0.45, angle));
+  
+  // Charge maps linearly from BASE_SPEED to MAX_SPEED
+  const speed = BASE_SPEED + bow.charge * (MAX_SPEED - BASE_SPEED);
+
+  // Get equipped arrow type
+  const equippedArrow = playerInventory.equipped.arrow || 'arrow_default';
+  
+  arrows.push({
+    x: bp.x, y: bp.y,
+    vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+    trail: [], hue: Math.random() * 360,
+    alive: true, magic: G.magic, age: 0,
+    type: equippedArrow
+  });
+  G.shots++;
+  if (G.showHint) G.showHint = false;
+}
 
 /* ---- UPDATE ---- */
-function update(){
-  if(G.paused) return;
+function update() {
+  if (G.paused || !G.gameActive) return;
 
-  if(bow.drawing) bow.charge=Math.min(1, bow.charge+0.013);
+  if (bow.drawing) bow.charge = Math.min(1, bow.charge + 0.013);
 
-  const minY=canvas.height*0.12, maxY=canvas.height*0.56;
-  targetY += targetDir * G.targetSpeed * 0.45;
-  if(targetY<=minY){targetY=minY;targetDir=1;}
-  if(targetY>=maxY){targetY=maxY;targetDir=-1;}
+  const minY = canvas.height * 0.12, maxY = canvas.height * 0.56;
+  
+  // Update target position based on type
+  const targetConfig = targetTypes[targetMovementType] || targetTypes.default;
+  const result = targetConfig.movement(targetY, minY, maxY, targetDir, G.targetSpeed * targetConfig.speed, targetPhase);
+  targetY = result.y;
+  targetDir = result.dir;
+  if (result.phase !== undefined) targetPhase = result.phase;
 
-  const tp=targetPos(), tr=targetRadius();
+  const tp = targetPos(), tr = targetRadius();
 
-  for(let a of arrows){
-    if(!a.alive) continue;
+  for (let a of arrows) {
+    if (!a.alive) continue;
     a.age++;
 
-    a.trail.push({x:a.x,y:a.y,h:(performance.now()*0.25+a.hue)%360});
-    if(a.trail.length>(a.magic?55:28)) a.trail.shift();
+    a.trail.push({ x: a.x, y: a.y, h: (performance.now() * 0.25 + a.hue) % 360 });
+    if (a.trail.length > (a.magic ? 55 : 28)) a.trail.shift();
 
     a.vy += 0.14;
 
     /* ---- MAGIC: always hits bullseye ---- */
-    if(a.magic){
-      const dx=tp.x-a.x, dy=tp.y-a.y;
-      const dist=Math.max(1, Math.sqrt(dx*dx+dy*dy));
-      const spd=Math.max(1, Math.sqrt(a.vx*a.vx+a.vy*a.vy));
+    if (a.magic) {
+      const dx = tp.x - a.x, dy = tp.y - a.y;
+      const dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+      const spd = Math.max(1, Math.sqrt(a.vx * a.vx + a.vy * a.vy));
 
-      if(dist < tr*1.2){
+      if (dist < tr * 1.2) {
         /* Close range: snap velocity directly at bullseye center */
-        a.vx = (dx/dist)*spd;
-        a.vy = (dy/dist)*spd;
+        a.vx = (dx / dist) * spd;
+        a.vy = (dy / dist) * spd;
       } else {
         /* Far range: strong steering + extra correction from miss streak */
-        const desVx=(dx/dist)*spd, desVy=(dy/dist)*spd;
-        /* Base 0.12 is very aggressive — guarantees convergence */
-        const strength = 0.12 + Math.min(G.misses,15)*0.015;
-        a.vx += (desVx-a.vx)*strength;
-        a.vy += (desVy-a.vy)*strength;
+        const desVx = (dx / dist) * spd, desVy = (dy / dist) * spd;
+        /* Base 0.12 is very aggressive - guarantees convergence */
+        const strength = 0.12 + Math.min(G.misses, 15) * 0.015;
+        a.vx += (desVx - a.vx) * strength;
+        a.vy += (desVy - a.vy) * strength;
       }
       /* Remove most gravity so it doesn't fight the steering */
       a.vy -= 0.10;
@@ -245,248 +933,356 @@ function update(){
     a.y += a.vy;
 
     /* Hit detection */
-    const hx=a.x-tp.x, hy=a.y-tp.y;
-    const hd=Math.sqrt(hx*hx+hy*hy);
+    const hx = a.x - tp.x, hy = a.y - tp.y;
+    const hd = Math.sqrt(hx * hx + hy * hy);
 
-    if(hd < tr && a.vx > 0){
-      a.alive=false;
-      const ratio=hd/tr;
-      let pts=10;
-      if(ratio<0.18) pts=100;
-      else if(ratio<0.38) pts=50;
-      else if(ratio<0.65) pts=25;
+    if (hd < tr && a.vx > 0) {
+      a.alive = false;
+      const ratio = hd / tr;
+      let pts = 10;
+      if (ratio < 0.18) pts = 100;
+      else if (ratio < 0.38) pts = 50;
+      else if (ratio < 0.65) pts = 25;
 
-      G.score+=pts; G.hits++; G.misses=0;
+      G.score += pts; G.hits++; G.misses = 0;
 
-      stuck.push({ox:hx,oy:hy,ang:Math.atan2(a.vy,a.vx),hue:a.hue});
-      if(stuck.length>12) stuck.shift();
+      // Add coins (1-3 per hit)
+      const coins = Math.floor(Math.random() * 3) + 1;
+      playerInventory.coins += coins;
+      document.getElementById('coinValue').textContent = playerInventory.coins;
 
-      popups.push({x:tp.x,y:tp.y-tr-10,text:'+'+pts,life:1,color:pts===100?'#ffd866':pts===50?'#ff7744':'#ffffff'});
+      stuck.push({ ox: hx, oy: hy, ang: Math.atan2(a.vy, a.vx), hue: a.hue, type: a.type });
+      if (stuck.length > 12) stuck.shift();
 
-      for(let i=0;i<25;i++){
-        const ang=Math.random()*Math.PI*2, v=Math.random()*5+1.5;
-        particles.push({x:a.x,y:a.y,vx:Math.cos(ang)*v,vy:Math.sin(ang)*v,life:1,hue:Math.random()*360,size:Math.random()*3+1.5});
+      popups.push({ x: tp.x, y: tp.y - tr - 10, text: '+' + pts, life: 1, color: pts === 100 ? '#ffd866' : pts === 50 ? '#ff7744' : '#ffffff' });
+
+      for (let i = 0; i < 25; i++) {
+        const ang = Math.random() * Math.PI * 2, v = Math.random() * 5 + 1.5;
+        particles.push({ x: a.x, y: a.y, vx: Math.cos(ang) * v, vy: Math.sin(ang) * v, life: 1, hue: Math.random() * 360, size: Math.random() * 3 + 1.5 });
       }
     }
 
-    if(a.x>canvas.width+80||a.y>canvas.height+80||a.x<-80||a.y<-80){
-      a.alive=false;
+    if (a.x > canvas.width + 80 || a.y > canvas.height + 80 || a.x < -80 || a.y < -80) {
+      a.alive = false;
       G.misses++;
     }
   }
 
-  arrows=arrows.filter(a=>a.alive);
+  arrows = arrows.filter(a => a.alive);
 
-  for(let p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.vx*=0.99;p.life-=0.018;}
-  particles=particles.filter(p=>p.life>0);
+  for (let p of particles) { p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.vx *= 0.99; p.life -= 0.018; }
+  particles = particles.filter(p => p.life > 0);
 
-  for(let p of popups){p.y-=0.8;p.life-=0.012;}
-  popups=popups.filter(p=>p.life>0);
+  for (let p of popups) { p.y -= 0.8; p.life -= 0.012; }
+  popups = popups.filter(p => p.life > 0);
 
-  document.getElementById('scoreVal').textContent=G.score;
-  document.getElementById('shotsVal').textContent=G.shots;
-  document.getElementById('hitsVal').textContent=G.hits;
-  document.getElementById('accVal').textContent=G.shots>0?Math.round(G.hits/G.shots*100)+'%':'0%';
+  document.getElementById('scoreVal').textContent = G.score;
+  document.getElementById('shotsVal').textContent = G.shots;
+  document.getElementById('hitsVal').textContent = G.hits;
+  document.getElementById('accVal').textContent = G.shots > 0 ? Math.round(G.hits / G.shots * 100) + '%' : '0%';
 }
 
 /* ---- DRAW ---- */
-function draw(){
-  const W=canvas.width, H=canvas.height, t=performance.now()*0.001;
+function draw() {
+  const W = canvas.width, H = canvas.height, t = performance.now() * 0.001;
 
-  const sky=ctx.createLinearGradient(0,0,0,H);
-  sky.addColorStop(0,'#060612');sky.addColorStop(0.5,'#0c0c22');sky.addColorStop(1,'#141428');
-  ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+  const sky = ctx.createLinearGradient(0, 0, 0, H);
+  sky.addColorStop(0, '#060612'); sky.addColorStop(0.5, '#0c0c22'); sky.addColorStop(1, '#141428');
+  ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H);
 
-  ctx.globalAlpha=0.025;
-  for(let i=0;i<4;i++){
-    const bx=W*(0.15+i*0.22+Math.sin(t*0.3+i*1.7)*0.04);
-    const by=H*(0.18+Math.sin(t*0.2+i*2.3)*0.06);
-    const br=W*0.18;
-    const rg=ctx.createRadialGradient(bx,by,0,bx,by,br);
-    const hue=(i*70+t*15)%360;
-    rg.addColorStop(0,'hsl('+hue+',70%,45%)');rg.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=rg;ctx.fillRect(0,0,W,H*0.55);
+  ctx.globalAlpha = 0.025;
+  for (let i = 0; i < 4; i++) {
+    const bx = W * (0.15 + i * 0.22 + Math.sin(t * 0.3 + i * 1.7) * 0.04);
+    const by = H * (0.18 + Math.sin(t * 0.2 + i * 2.3) * 0.06);
+    const br = W * 0.18;
+    const rg = ctx.createRadialGradient(bx, by, 0, bx, by, br);
+    const hue = (i * 70 + t * 15) % 360;
+    rg.addColorStop(0, 'hsl(' + hue + ',70%,45%)'); rg.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H * 0.55);
   }
-  ctx.globalAlpha=1;
+  ctx.globalAlpha = 1;
 
-  for(let s of stars){
-    const a=0.25+0.3*Math.sin(t*1.2+s.phase);
-    ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.s,0,Math.PI*2);
-    ctx.fillStyle='rgba(220,225,255,'+a.toFixed(3)+')';ctx.fill();
+  for (let s of stars) {
+    const a = 0.25 + 0.3 * Math.sin(t * 1.2 + s.phase);
+    ctx.beginPath(); ctx.arc(s.x * W, s.y * H, s.s, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(220,225,255,' + a.toFixed(3) + ')'; ctx.fill();
   }
 
-  const gy=groundY();
-  const gGrad=ctx.createLinearGradient(0,gy,0,H);
-  gGrad.addColorStop(0,'#141e14');gGrad.addColorStop(1,'#0a120a');
-  ctx.fillStyle=gGrad;ctx.fillRect(0,gy,W,H-gy);
-  ctx.strokeStyle='#1e3a1e';ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(0,gy);ctx.lineTo(W,gy);ctx.stroke();
+  const gy = groundY();
+  const gGrad = ctx.createLinearGradient(0, gy, 0, H);
+  gGrad.addColorStop(0, '#141e14'); gGrad.addColorStop(1, '#0a120a');
+  ctx.fillStyle = gGrad; ctx.fillRect(0, gy, W, H - gy);
+  ctx.strokeStyle = '#1e3a1e'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
 
-  ctx.strokeStyle='#1a3318';ctx.lineWidth=1.5;
-  for(let g of grass){
-    const gx=g.x*W, sway=Math.sin(t*1.5+g.phase)*3;
-    ctx.beginPath();ctx.moveTo(gx,gy);
-    ctx.quadraticCurveTo(gx+g.lean*g.h+sway,gy-g.h*0.6,gx+g.lean*g.h*2+sway,gy-g.h);
+  ctx.strokeStyle = '#1a3318'; ctx.lineWidth = 1.5;
+  for (let g of grass) {
+    const gx = g.x * W, sway = Math.sin(t * 1.5 + g.phase) * 3;
+    ctx.beginPath(); ctx.moveTo(gx, gy);
+    ctx.quadraticCurveTo(gx + g.lean * g.h + sway, gy - g.h * 0.6, gx + g.lean * g.h * 2 + sway, gy - g.h);
     ctx.stroke();
   }
 
-  const tp=targetPos(), tr=targetRadius();
+  const tp = targetPos(), tr = targetRadius();
 
   /* Target stand */
-  ctx.strokeStyle='#4a3020';ctx.lineWidth=5;
-  ctx.beginPath();ctx.moveTo(tp.x,tp.y+tr+2);ctx.lineTo(tp.x,gy);ctx.stroke();
-  ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(tp.x-18,gy);ctx.lineTo(tp.x+18,gy);ctx.stroke();
+  ctx.strokeStyle = '#4a3020'; ctx.lineWidth = 5;
+  ctx.beginPath(); ctx.moveTo(tp.x, tp.y + tr + 2); ctx.lineTo(tp.x, gy); ctx.stroke();
+  ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(tp.x - 18, gy); ctx.lineTo(tp.x + 18, gy); ctx.stroke();
 
   /* Target shadow */
-  ctx.beginPath();ctx.arc(tp.x+4,tp.y+4,tr+2,0,Math.PI*2);ctx.fillStyle='rgba(0,0,0,0.25)';ctx.fill();
-  ctx.beginPath();ctx.arc(tp.x+3,tp.y,tr+2,-0.3,0.3);ctx.strokeStyle='#8a7a6a';ctx.lineWidth=4;ctx.stroke();
+  ctx.beginPath(); ctx.arc(tp.x + 4, tp.y + 4, tr + 2, 0, Math.PI * 2); ctx.fillStyle = 'rgba(0,0,0,0.25)'; ctx.fill();
+  ctx.beginPath(); ctx.arc(tp.x + 3, tp.y, tr + 2, -0.3, 0.3); ctx.strokeStyle = '#8a7a6a'; ctx.lineWidth = 4; ctx.stroke();
 
-  /* Target rings */
-  const rings=[{r:1,c:'#e8e0d0'},{r:.82,c:'#1a1a1a'},{r:.66,c:'#2288cc'},{r:.5,c:'#cc2222'},{r:.34,c:'#ddaa22'},{r:.18,c:'#cc2222'}];
-  for(let rn of rings){
-    ctx.beginPath();ctx.arc(tp.x,tp.y,Math.max(1,tr*rn.r),0,Math.PI*2);
-    ctx.fillStyle=rn.c;ctx.fill();
-    ctx.strokeStyle='rgba(0,0,0,0.15)';ctx.lineWidth=0.8;ctx.stroke();
+  /* Target rings - different colors based on equipped target */
+  const equippedTarget = playerInventory.equipped.target || 'target_default';
+  let ringColors = [{ r: 1, c: '#e8e0d0' }, { r: .82, c: '#1a1a1a' }, { r: .66, c: '#2288cc' }, { r: .5, c: '#cc2222' }, { r: .34, c: '#ddaa22' }, { r: .18, c: '#cc2222' }];
+  
+  if (equippedTarget === 'target_fire') {
+    ringColors = [{ r: 1, c: '#ffcc80' }, { r: .82, c: '#ff9800' }, { r: .66, c: '#ff5722' }, { r: .5, c: '#e64a19' }, { r: .34, c: '#bf360c' }, { r: .18, c: '#ff1744' }];
+  } else if (equippedTarget === 'target_ice') {
+    ringColors = [{ r: 1, c: '#e0f7fa' }, { r: .82, c: '#b2ebf2' }, { r: .66, c: '#80deea' }, { r: .5, c: '#4dd0e1' }, { r: .34, c: '#26c6da' }, { r: .18, c: '#00acc1' }];
   }
-  ctx.beginPath();ctx.arc(tp.x,tp.y,Math.max(1,tr*0.06),0,Math.PI*2);ctx.fillStyle='#ffeedd';ctx.fill();
+  
+  for (let rn of ringColors) {
+    ctx.beginPath(); ctx.arc(tp.x, tp.y, Math.max(1, tr * rn.r), 0, Math.PI * 2);
+    ctx.fillStyle = rn.c; ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,0.15)'; ctx.lineWidth = 0.8; ctx.stroke();
+  }
+  ctx.beginPath(); ctx.arc(tp.x, tp.y, Math.max(1, tr * 0.06), 0, Math.PI * 2); ctx.fillStyle = '#ffeedd'; ctx.fill();
 
   /* Stuck arrows */
-  for(let sa of stuck){
-    const sx=tp.x+sa.ox, sy=tp.y+sa.oy;
-    ctx.save();ctx.translate(sx,sy);ctx.rotate(sa.ang);
-    const sl=22;
-    const sg=ctx.createLinearGradient(-sl,0,4,0);
-    sg.addColorStop(0,'hsl('+sa.hue+',90%,60%)');sg.addColorStop(1,'hsl('+((sa.hue+140)%360)+',90%,60%)');
-    ctx.strokeStyle=sg;ctx.lineWidth=2.2;ctx.beginPath();ctx.moveTo(-sl,0);ctx.lineTo(4,0);ctx.stroke();
-    ctx.fillStyle='rgba(255,80,80,0.5)';ctx.beginPath();ctx.moveTo(-sl,0);ctx.lineTo(-sl-5,-3.5);ctx.lineTo(-sl-1,0);ctx.fill();
+  for (let sa of stuck) {
+    const sx = tp.x + sa.ox, sy = tp.y + sa.oy;
+    ctx.save(); ctx.translate(sx, sy); ctx.rotate(sa.ang);
+    const sl = 22;
+    
+    // Different arrow colors based on type
+    let primaryColor = 'hsl(' + sa.hue + ',90%,60%)';
+    let secondaryColor = 'hsl(' + ((sa.hue + 140) % 360) + ',90%,60%)';
+    
+    if (sa.type === 'arrow_fire') {
+      primaryColor = '#ff5722';
+      secondaryColor = '#ff9800';
+    } else if (sa.type === 'arrow_ice') {
+      primaryColor = '#4dd0e1';
+      secondaryColor = '#80deea';
+    } else if (sa.type === 'arrow_lightning') {
+      primaryColor = '#ffeb3b';
+      secondaryColor = '#ffc107';
+    } else if (sa.type === 'arrow_poison') {
+      primaryColor = '#4caf50';
+      secondaryColor = '#8bc34a';
+    }
+    
+    const sg = ctx.createLinearGradient(-sl, 0, 4, 0);
+    sg.addColorStop(0, primaryColor); sg.addColorStop(1, secondaryColor);
+    ctx.strokeStyle = sg; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(-sl, 0); ctx.lineTo(4, 0); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,80,80,0.5)'; ctx.beginPath(); ctx.moveTo(-sl, 0); ctx.lineTo(-sl - 5, -3.5); ctx.lineTo(-sl - 1, 0); ctx.fill();
     ctx.restore();
   }
 
   /* Flying arrows */
-  for(let a of arrows){
-    if(!a.alive) continue;
-    const ang=Math.atan2(a.vy,a.vx), len=48;
+  for (let a of arrows) {
+    if (!a.alive) continue;
+    const ang = Math.atan2(a.vy, a.vx), len = 48;
 
-    for(let i=0;i<a.trail.length;i++){
-      const pt=a.trail[i], frac=i/a.trail.length, alpha=frac*0.55, sz=1.5+frac*2.5;
-      ctx.beginPath();ctx.arc(pt.x,pt.y,sz,0,Math.PI*2);
-      ctx.fillStyle='hsla('+pt.h+',100%,65%,'+alpha.toFixed(3)+')';ctx.fill();
+    for (let i = 0; i < a.trail.length; i++) {
+      const pt = a.trail[i], frac = i / a.trail.length, alpha = frac * 0.55, sz = 1.5 + frac * 2.5;
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, sz, 0, Math.PI * 2);
+      
+      // Different trail colors based on arrow type
+      let trailColor = 'hsla(' + pt.h + ',100%,65%,' + alpha.toFixed(3) + ')';
+      if (a.type === 'arrow_fire') trailColor = 'hsla(15,100%,65%,' + alpha.toFixed(3) + ')';
+      else if (a.type === 'arrow_ice') trailColor = 'hsla(200,100%,65%,' + alpha.toFixed(3) + ')';
+      else if (a.type === 'arrow_lightning') trailColor = 'hsla(60,100%,65%,' + alpha.toFixed(3) + ')';
+      else if (a.type === 'arrow_poison') trailColor = 'hsla(120,100%,65%,' + alpha.toFixed(3) + ')';
+      
+      ctx.fillStyle = trailColor; ctx.fill();
     }
 
-    if(a.magic && Math.random()<0.4){
-      particles.push({x:a.x+(Math.random()-0.5)*14,y:a.y+(Math.random()-0.5)*14,
-        vx:(Math.random()-0.5)*1.5,vy:(Math.random()-0.5)*1.5,life:0.45,hue:Math.random()*50+35,size:Math.random()*2.5+1});
+    if (a.magic && Math.random() < 0.4) {
+      particles.push({ x: a.x + (Math.random() - 0.5) * 14, y: a.y + (Math.random() - 0.5) * 14,
+        vx: (Math.random() - 0.5) * 1.5, vy: (Math.random() - 0.5) * 1.5, life: 0.45, hue: Math.random() * 50 + 35, size: Math.random() * 2.5 + 1 });
     }
 
-    ctx.save();ctx.translate(a.x,a.y);ctx.rotate(ang);
-    const ghue=(performance.now()*0.2+a.hue)%360;
-    ctx.shadowBlur=a.magic?14:8;ctx.shadowColor='hsl('+ghue+',100%,60%)';
+    ctx.save(); ctx.translate(a.x, a.y); ctx.rotate(ang);
+    const ghue = (performance.now() * 0.2 + a.hue) % 360;
+    ctx.shadowBlur = a.magic ? 14 : 8; ctx.shadowColor = 'hsl(' + ghue + ',100%,60%)';
 
-    const sg=ctx.createLinearGradient(-len/2,0,len/2,0);
-    for(let i=0;i<=10;i++){const h=(i*36+performance.now()*0.18+a.hue)%360;sg.addColorStop(i/10,'hsl('+h+',100%,62%)');}
-    ctx.strokeStyle=sg;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-len/2,0);ctx.lineTo(len/2,0);ctx.stroke();
-    ctx.shadowBlur=0;
+    // Arrow shaft color based on type
+    let shaftGradient = ctx.createLinearGradient(-len / 2, 0, len / 2, 0);
+    if (a.type === 'arrow_fire') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 15) % 360; shaftGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (a.type === 'arrow_ice') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 200) % 360; shaftGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (a.type === 'arrow_lightning') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 60) % 360; shaftGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (a.type === 'arrow_poison') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 120) % 360; shaftGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + a.hue) % 360; shaftGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    }
+    
+    ctx.strokeStyle = shaftGradient; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-len / 2, 0); ctx.lineTo(len / 2, 0); ctx.stroke();
+    ctx.shadowBlur = 0;
 
-    ctx.fillStyle='#d8d0c8';ctx.beginPath();ctx.moveTo(len/2+9,0);ctx.lineTo(len/2-3,-5.5);ctx.lineTo(len/2-3,5.5);ctx.closePath();ctx.fill();
-    ctx.fillStyle='rgba(255,70,70,0.75)';ctx.beginPath();ctx.moveTo(-len/2,0);ctx.lineTo(-len/2-9,-5.5);ctx.lineTo(-len/2-3,0);ctx.fill();
-    ctx.fillStyle='rgba(70,70,255,0.75)';ctx.beginPath();ctx.moveTo(-len/2,0);ctx.lineTo(-len/2-9,5.5);ctx.lineTo(-len/2-3,0);ctx.fill();
+    ctx.fillStyle = '#d8d0c8'; ctx.beginPath(); ctx.moveTo(len / 2 + 9, 0); ctx.lineTo(len / 2 - 3, -5.5); ctx.lineTo(len / 2 - 3, 5.5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = 'rgba(255,70,70,0.75)'; ctx.beginPath(); ctx.moveTo(-len / 2, 0); ctx.lineTo(-len / 2 - 9, -5.5); ctx.lineTo(-len / 2 - 3, 0); ctx.fill();
+    ctx.fillStyle = 'rgba(70,70,255,0.75)'; ctx.beginPath(); ctx.moveTo(-len / 2, 0); ctx.lineTo(-len / 2 - 9, 5.5); ctx.lineTo(-len / 2 - 3, 0); ctx.fill();
     ctx.restore();
   }
 
   /* Particles */
-  for(let p of particles){
-    ctx.beginPath();ctx.arc(p.x,p.y,Math.max(0.5,p.size*p.life),0,Math.PI*2);
-    ctx.fillStyle='hsla('+p.hue+',100%,65%,'+p.life.toFixed(3)+')';ctx.fill();
+  for (let p of particles) {
+    ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0.5, p.size * p.life), 0, Math.PI * 2);
+    ctx.fillStyle = 'hsla(' + p.hue + ',100%,65%,' + p.life.toFixed(3) + ')'; ctx.fill();
   }
 
   /* Popups */
-  ctx.textAlign='center';ctx.textBaseline='middle';
-  for(let p of popups){
-    ctx.font='bold 22px Orbitron';ctx.globalAlpha=Math.max(0,p.life);
-    ctx.fillStyle=p.color;ctx.fillText(p.text,p.x,p.y);
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for (let p of popups) {
+    ctx.font = 'bold 22px Orbitron'; ctx.globalAlpha = Math.max(0, p.life);
+    ctx.fillStyle = p.color; ctx.fillText(p.text, p.x, p.y);
   }
-  ctx.globalAlpha=1;
+  ctx.globalAlpha = 1;
 
   /* Aim line */
-  if(bow.drawing){
-    const bp=bowPos();
-    const ang=Math.atan2(mouseY-bp.y,mouseX-bp.x);
-    const ca=Math.max(-Math.PI*0.45,Math.min(Math.PI*0.45,ang));
-    ctx.save();ctx.setLineDash([4,12]);ctx.strokeStyle='rgba(255,255,255,0.1)';ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(bp.x,bp.y);ctx.lineTo(bp.x+Math.cos(ca)*600,bp.y+Math.sin(ca)*600);ctx.stroke();
-    ctx.setLineDash([]);ctx.restore();
+  if (bow.drawing) {
+    const bp = bowPos();
+    const ang = Math.atan2(mouseY - bp.y, mouseX - bp.x);
+    const ca = Math.max(-Math.PI * 0.45, Math.min(Math.PI * 0.45, ang));
+    ctx.save(); ctx.setLineDash([4, 12]); ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(bp.x, bp.y); ctx.lineTo(bp.x + Math.cos(ca) * 600, bp.y + Math.sin(ca) * 600); ctx.stroke();
+    ctx.setLineDash([]); ctx.restore();
   }
 
   drawBow(t);
 
   /* Charge indicator */
-  if(bow.drawing && bow.charge>0.02){
-    const bp=bowPos(), cr=40, startA=-Math.PI*0.75, endA=startA+bow.charge*Math.PI*1.5;
-    ctx.beginPath();ctx.arc(bp.x,bp.y,cr,startA,startA+Math.PI*1.5);
-    ctx.strokeStyle='rgba(255,255,255,0.07)';ctx.lineWidth=4;ctx.lineCap='round';ctx.stroke();
-    const ch=bow.charge<0.5?'hsl('+(120-bow.charge*120)+',100%,50%)':'hsl('+(60-(bow.charge-0.5)*120)+',100%,50%)';
-    ctx.beginPath();ctx.arc(bp.x,bp.y,cr,startA,endA);
-    ctx.strokeStyle=ch;ctx.lineWidth=4;ctx.lineCap='round';ctx.stroke();
-    ctx.font='11px Orbitron';ctx.fillStyle=ch;ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(Math.round(bow.charge*100)+'%',bp.x,bp.y+cr+16);
+  if (bow.drawing && bow.charge > 0.02) {
+    const bp = bowPos(), cr = 40, startA = -Math.PI * 0.75, endA = startA + bow.charge * Math.PI * 1.5;
+    ctx.beginPath(); ctx.arc(bp.x, bp.y, cr, startA, startA + Math.PI * 1.5);
+    ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.stroke();
+    const ch = bow.charge < 0.5 ? 'hsl(' + (120 - bow.charge * 120) + ',100%,50%)' : 'hsl(' + (60 - (bow.charge - 0.5) * 120) + ',100%,50%)';
+    ctx.beginPath(); ctx.arc(bp.x, bp.y, cr, startA, endA);
+    ctx.strokeStyle = ch; ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.stroke();
+    ctx.font = '11px Orbitron'; ctx.fillStyle = ch; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(Math.round(bow.charge * 100) + '%', bp.x, bp.y + cr + 16);
   }
 
-  if(G.showHint){
-    ctx.font='14px Space Grotesk';ctx.fillStyle='rgba(255,255,255,0.4)';
-    ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText('Click & hold to charge — aim with mouse — release to shoot',W/2,H*0.93);
+  if (G.showHint) {
+    ctx.font = '14px Space Grotesk'; ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('Click & hold to charge — aim with mouse — release to shoot', W / 2, H * 0.93);
   }
 
-  const vig=ctx.createRadialGradient(W/2,H/2,W*0.25,W/2,H/2,W*0.75);
-  vig.addColorStop(0,'rgba(0,0,0,0)');vig.addColorStop(1,'rgba(0,0,0,0.35)');
-  ctx.fillStyle=vig;ctx.fillRect(0,0,W,H);
+  const vig = ctx.createRadialGradient(W / 2, H / 2, W * 0.25, W / 2, H / 2, W * 0.75);
+  vig.addColorStop(0, 'rgba(0,0,0,0)'); vig.addColorStop(1, 'rgba(0,0,0,0.35)');
+  ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
 }
 
-function drawBow(t){
-  const bp=bowPos();
-  const ang=Math.atan2(mouseY-bp.y,mouseX-bp.x);
-  const ca=Math.max(-Math.PI*0.48,Math.min(Math.PI*0.48,ang));
-  const pull=bow.charge*48, bLen=58, bCurve=20;
+function drawBow(t) {
+  const bp = bowPos();
+  const ang = Math.atan2(mouseY - bp.y, mouseX - bp.x);
+  const ca = Math.max(-Math.PI * 0.48, Math.min(Math.PI * 0.48, ang));
+  const pull = bow.charge * 48, bLen = 58, bCurve = 20;
 
-  ctx.save();ctx.translate(bp.x,bp.y);ctx.rotate(ca);
+  ctx.save(); ctx.translate(bp.x, bp.y); ctx.rotate(ca);
 
-  if(G.magic){ctx.shadowBlur=18+Math.sin(t*3)*6;ctx.shadowColor='rgba(255,200,50,0.3)';}
+  // Different bow colors based on equipped bow
+  const equippedBow = playerInventory.equipped.bow || 'bow_default';
+  
+  if (equippedBow === 'bow_fire') {
+    ctx.shadowBlur = 18 + Math.sin(t * 3) * 6; ctx.shadowColor = 'rgba(255,100,30,0.5)';
+  } else if (equippedBow === 'bow_ice') {
+    ctx.shadowBlur = 18 + Math.sin(t * 3) * 6; ctx.shadowColor = 'rgba(100,200,255,0.5)';
+  } else if (equippedBow === 'bow_gold') {
+    ctx.shadowBlur = 18 + Math.sin(t * 3) * 6; ctx.shadowColor = 'rgba(255,215,0,0.5)';
+  } else if (equippedBow === 'bow_shadow') {
+    ctx.shadowBlur = 18 + Math.sin(t * 3) * 6; ctx.shadowColor = 'rgba(100,50,150,0.5)';
+  } else if (G.magic) {
+    ctx.shadowBlur = 18 + Math.sin(t * 3) * 6; ctx.shadowColor = 'rgba(255,200,50,0.3)';
+  }
 
-  ctx.beginPath();ctx.moveTo(0,-bLen);ctx.quadraticCurveTo(bCurve+8,-bLen*0.5,bCurve+2,0);
-  ctx.quadraticCurveTo(bCurve+8,bLen*0.5,0,bLen);
-  ctx.strokeStyle='#5a3a22';ctx.lineWidth=9;ctx.lineCap='round';ctx.stroke();
+  // Bow body color based on type
+  let bowColor = '#5a3a22';
+  let bowHighlight = 'rgba(180,130,80,0.35)';
+  
+  if (equippedBow === 'bow_fire') {
+    bowColor = '#8d4004';
+    bowHighlight = 'rgba(255,150,50,0.5)';
+  } else if (equippedBow === 'bow_ice') {
+    bowColor = '#4a90e2';
+    bowHighlight = 'rgba(150,200,255,0.5)';
+  } else if (equippedBow === 'bow_gold') {
+    bowColor = '#d4af37';
+    bowHighlight = 'rgba(255,220,100,0.5)';
+  } else if (equippedBow === 'bow_shadow') {
+    bowColor = '#2d2d5a';
+    bowHighlight = 'rgba(100,80,200,0.5)';
+  }
 
-  ctx.beginPath();ctx.moveTo(1,-bLen+3);ctx.quadraticCurveTo(bCurve+9,-bLen*0.5,bCurve+3,0);
-  ctx.quadraticCurveTo(bCurve+9,bLen*0.5,1,bLen-3);
-  ctx.strokeStyle='rgba(180,130,80,0.35)';ctx.lineWidth=3;ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, -bLen); ctx.quadraticCurveTo(bCurve + 8, -bLen * 0.5, bCurve + 2, 0);
+  ctx.quadraticCurveTo(bCurve + 8, bLen * 0.5, 0, bLen);
+  ctx.strokeStyle = bowColor; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.stroke();
 
-  ctx.shadowBlur=0;ctx.fillStyle='#7a5a3a';
-  ctx.beginPath();ctx.arc(0,-bLen,3,0,Math.PI*2);ctx.fill();
-  ctx.beginPath();ctx.arc(0,bLen,3,0,Math.PI*2);ctx.fill();
+  ctx.beginPath(); ctx.moveTo(1, -bLen + 3); ctx.quadraticCurveTo(bCurve + 9, -bLen * 0.5, bCurve + 3, 0);
+  ctx.quadraticCurveTo(bCurve + 9, bLen * 0.5, 1, bLen - 3);
+  ctx.strokeStyle = bowHighlight; ctx.lineWidth = 3; ctx.stroke();
 
-  ctx.beginPath();ctx.moveTo(0,-bLen);ctx.quadraticCurveTo(-pull,0,0,bLen);
-  ctx.strokeStyle='rgba(210,205,195,0.85)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.shadowBlur = 0; ctx.fillStyle = '#7a5a3a';
+  ctx.beginPath(); ctx.arc(0, -bLen, 3, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(0, bLen, 3, 0, Math.PI * 2); ctx.fill();
 
-  if(bow.drawing && bow.charge>0.04){
-    const nockX=-pull*0.6, aLen=52;
-    const sg=ctx.createLinearGradient(nockX,0,nockX+aLen,0);
-    for(let i=0;i<=10;i++){const h=(i*36+performance.now()*0.12)%360;sg.addColorStop(i/10,'hsl('+h+',100%,62%)');}
+  ctx.beginPath(); ctx.moveTo(0, -bLen); ctx.quadraticCurveTo(-pull, 0, 0, bLen);
+  ctx.strokeStyle = 'rgba(210,205,195,0.85)'; ctx.lineWidth = 1.5; ctx.stroke();
 
-    if(G.magic){ctx.shadowBlur=10;ctx.shadowColor='rgba(255,210,60,0.5)';}
+  if (bow.drawing && bow.charge > 0.04) {
+    const nockX = -pull * 0.6, aLen = 52;
+    
+    // Arrow color based on equipped arrow
+    const equippedArrow = playerInventory.equipped.arrow || 'arrow_default';
+    let arrowGradient = ctx.createLinearGradient(nockX, 0, nockX + aLen, 0);
+    
+    if (equippedArrow === 'arrow_fire') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 15) % 360; arrowGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (equippedArrow === 'arrow_ice') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 200) % 360; arrowGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (equippedArrow === 'arrow_lightning') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 60) % 360; arrowGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else if (equippedArrow === 'arrow_poison') {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12 + 120) % 360; arrowGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    } else {
+      for (let i = 0; i <= 10; i++) { const h = (i * 36 + performance.now() * 0.12) % 360; arrowGradient.addColorStop(i / 10, 'hsl(' + h + ',100%,62%)'); }
+    }
 
-    ctx.strokeStyle=sg;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(nockX,0);ctx.lineTo(nockX+aLen,0);ctx.stroke();
-    ctx.shadowBlur=0;
+    if (G.magic) { ctx.shadowBlur = 10; ctx.shadowColor = 'rgba(255,210,60,0.5)'; }
 
-    ctx.fillStyle='#c8c0b8';ctx.beginPath();ctx.moveTo(nockX+aLen+8,0);ctx.lineTo(nockX+aLen-3,-5);ctx.lineTo(nockX+aLen-3,5);ctx.closePath();ctx.fill();
-    ctx.fillStyle='rgba(255,60,60,0.7)';ctx.beginPath();ctx.moveTo(nockX,0);ctx.lineTo(nockX-8,-6);ctx.lineTo(nockX-2,0);ctx.fill();
-    ctx.fillStyle='rgba(60,60,255,0.7)';ctx.beginPath();ctx.moveTo(nockX,0);ctx.lineTo(nockX-8,6);ctx.lineTo(nockX-2,0);ctx.fill();
+    ctx.strokeStyle = arrowGradient; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(nockX, 0); ctx.lineTo(nockX + aLen, 0); ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    ctx.fillStyle = '#c8c0b8'; ctx.beginPath(); ctx.moveTo(nockX + aLen + 8, 0); ctx.lineTo(nockX + aLen - 3, -5); ctx.lineTo(nockX + aLen - 3, 5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = 'rgba(255,60,60,0.7)'; ctx.beginPath(); ctx.moveTo(nockX, 0); ctx.lineTo(nockX - 8, -6); ctx.lineTo(nockX - 2, 0); ctx.fill();
+    ctx.fillStyle = 'rgba(60,60,255,0.7)'; ctx.beginPath(); ctx.moveTo(nockX, 0); ctx.lineTo(nockX - 8, 6); ctx.lineTo(nockX - 2, 0); ctx.fill();
   }
 
   ctx.restore();
 }
 
-function loop(){ update(); draw(); requestAnimationFrame(loop); }
+// ==================== INITIALIZE ====================
+loadGame();
+updateLanguage();
+
+// Initial UI updates
+document.getElementById('coinValue').textContent = playerInventory.coins;
+
+// Game loop
+function loop() { update(); draw(); requestAnimationFrame(loop); }
 loop();
+
+// Show main menu initially
+document.getElementById('mainMenu').style.display = 'flex';
 </script>
 </body>
 </html>
